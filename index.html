@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="林甲勤｜AIGC 视频设计师作品集。真人短剧《狂猎》、职场反差短片、哪吒神话特效。">
+  <meta property="og:title" content="林甲勤｜AIGC 视频设计师">
+  <meta property="og:description" content="真人短剧《狂猎》、职场反差短片、哪吒神话特效。点开即可播放。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="thumbs/nezha.jpg">
+  <title>林甲勤｜AIGC 视频设计师</title>
+  <style>
+    :root {
+      --bg: #0c0b0a;
+      --paper: #f4efe6;
+      --muted: #b7b0a4;
+      --line: #2a2622;
+      --gold: #c6a36a;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--paper);
+      font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(12,11,10,.92);
+      z-index: 5;
+    }
+    .brand { letter-spacing: .22em; font-size: 12px; font-weight: 700; }
+    .brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 22px; font-size: 13px; color: var(--muted); }
+    .nav-links a:hover { color: var(--paper); }
+    .hero { padding: 72px 0 36px; }
+    .kicker { color: var(--gold); font-size: 12px; letter-spacing: .18em; }
+    h1 { font-size: clamp(40px, 7vw, 76px); line-height: .95; letter-spacing: -.06em; margin: 14px 0 18px; font-weight: 800; }
+    .hero p { max-width: 640px; color: var(--muted); font-size: 17px; margin: 0 0 28px; }
+    .meta-row { display: flex; gap: 28px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+    .meta-row b { color: var(--paper); font-weight: 600; display: block; }
+    .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-bottom: 18px; }
+    .strip a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      min-height: 190px;
+    }
+    .strip img { width: 100%; height: 220px; object-fit: cover; display: block; filter: saturate(.92); }
+    .strip .cap {
+      position: absolute; left: 12px; bottom: 10px;
+      font-size: 12px; letter-spacing: .12em; color: var(--paper);
+      text-shadow: 0 1px 8px #000;
+    }
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .sec-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 28px; }
+    .sec-head h2 { margin: 0; font-size: 32px; letter-spacing: -.04em; }
+    .sec-head p { margin: 0; color: var(--muted); max-width: 420px; text-align: right; font-size: 14px; }
+    .case { display: grid; grid-template-columns: 1.35fr .85fr; gap: 28px; align-items: start; margin-bottom: 54px; }
+    .case:nth-child(even) { grid-template-columns: .85fr 1.35fr; }
+    .case:nth-child(even) .copy { order: -1; }
+    .stage { background: #000; border: 1px solid var(--line); }
+    video { width: 100%; display: block; background: #000; max-height: 68vh; }
+    .copy .idx { color: var(--gold); font-size: 12px; letter-spacing: .16em; }
+    .copy h3 { margin: 8px 0 10px; font-size: 28px; letter-spacing: -.03em; }
+    .copy p { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+    .copy ul { margin: 0; padding-left: 18px; font-size: 14px; }
+    .copy li { margin: 6px 0; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .tag { border: 1px solid #3d372f; color: #d8cbb6; border-radius: 99px; padding: 3px 10px; font-size: 11px; }
+    .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; }
+    .panel { border: 1px solid var(--line); padding: 24px; }
+    .panel h3 { margin: 0 0 12px; font-size: 18px; }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 18px; }
+    .steps div { border-top: 2px solid var(--gold); padding-top: 10px; }
+    .steps strong { display: block; font-size: 13px; }
+    .steps span { color: var(--muted); font-size: 12px; }
+    .contact { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .contact h2 { margin: 0; font-size: 32px; }
+    .contact p { margin: 8px 0 0; color: var(--muted); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--gold); color: var(--bg); background: var(--gold);
+      padding: 11px 18px; font-weight: 700; font-size: 14px;
+    }
+    .btn.ghost { background: transparent; color: var(--paper); border-color: var(--line); }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    footer { padding: 24px 0 40px; color: #7d766c; font-size: 12px; display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); }
+    @media (max-width: 860px) {
+      .wrap { padding: 0 16px; }
+      .strip, .case, .case:nth-child(even), .about { grid-template-columns: 1fr; }
+      .case:nth-child(even) .copy { order: 0; }
+      .sec-head, .contact, footer { display: block; }
+      .sec-head p, .contact p { text-align: left; margin-top: 8px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .btn { margin-top: 16px; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">LIN <span>/</span> JIAQIN</a>
+      <div class="nav-links">
+        <a href="#work">作品</a>
+        <a href="#about">方法</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="kicker">AIGC VIDEO DESIGNER · HANGZHOU · 2026</div>
+      <h1>把一场戏<br>做成一条片。</h1>
+      <p>林甲勤，AIGC 视频设计师。从分镜、锚点和提示词，到图生视频、精剪、声音和成片。下面三条是可直接点开的作品。</p>
+      <div class="meta-row">
+        <div><b>方向</b>真人短剧 / 职场短片 / 神话特效</div>
+        <div><b>经历</b>天启映画 · 2026.05—09</div>
+        <div><b>学历</b>浙江科技大学 · 机器人工程</div>
+      </div>
+    </header>
+
+    <div class="strip" aria-label="作品预览">
+      <a href="#kuanglie"><img src="thumbs/kuanglie.jpg" alt="《狂猎》夜戏预览"><span class="cap">01  狂猎</span></a>
+      <a href="#workplace"><img src="thumbs/workplace.jpg" alt="职场反差短片预览"><span class="cap">02  职场反差</span></a>
+      <a href="#nezha"><img src="thumbs/nezha.jpg" alt="哪吒混天绫段预览"><span class="cap">03  哪吒 · 混天绫</span></a>
+    </div>
+
+    <section id="work">
+      <div class="sec-head">
+        <h2>作品</h2>
+        <p>点画面即可播放。三条片子对应简历里的三个代表项目。</p>
+      </div>
+
+      <article class="case" id="kuanglie">
+        <div class="stage">
+          <video poster="thumbs/kuanglie.jpg" controls preload="metadata" playsinline>
+            <source src="media/kuanglie.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="copy">
+          <div class="idx">01 / LIVE ACTION · 50s · 720p</div>
+          <h3>《狂猎》</h3>
+          <p>真人谍战短剧夜戏。公交站、车灯、对峙。重点不是炫模型，是人物朝向、视线、伤势和空间还能接上。</p>
+          <ul>
+            <li>场景 41：79 刀分镜、44 段台词，2 个角色锚点 + 1 个场景锚点</li>
+            <li>长台词拆成可生成的 montage，保留对白覆盖</li>
+            <li>抽帧核对动作因果、前景遮挡、守轴和跨段状态</li>
+          </ul>
+          <div class="tags"><span class="tag">真人一致性</span><span class="tag">视线匹配</span><span class="tag">空间连续</span></div>
+        </div>
+      </article>
+
+      <article class="case" id="workplace">
+        <div class="stage">
+          <video poster="thumbs/workplace.jpg" controls preload="metadata" playsinline>
+            <source src="media/workplace.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="copy">
+          <div class="idx">02 / NARRATIVE SHORT · 85s · 720p</div>
+          <h3>职场反差</h3>
+          <p>同一人物，从办公室日常切到极端处境。信息差、反应镜头和对白节点要接住，伤势和表情不能凭空变。</p>
+          <ul>
+            <li>设计人物关系、反差结构和结尾节奏</li>
+            <li>检查表情是否由具体事件触发，核对眼神、手部和伤势连续性</li>
+            <li>剪映精剪、字幕、成片输出</li>
+          </ul>
+          <div class="tags"><span class="tag">叙事剪辑</span><span class="tag">表演连续</span><span class="tag">音画同步</span></div>
+        </div>
+      </article>
+
+      <article class="case" id="nezha">
+        <div class="stage">
+          <video poster="thumbs/nezha.jpg" controls preload="metadata" playsinline>
+            <source src="media/nezha.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="copy">
+          <div class="idx">03 / VFX ACTION · 44s · 720p</div>
+          <h3>哪吒 · 混天绫</h3>
+          <p>神话动作段。混天绫缠绕、火柱落地、法宝命中。特效要绑在角色和打击点上，不能只是好看的粒子。</p>
+          <ul>
+            <li>按特效主体、动作密度、景别起伏组织镜头</li>
+            <li>问题拆成参考资产、镜头容纳、动作时序、物理表现、后期拼接</li>
+            <li>抽帧对比命中瞬间和空间纵深</li>
+          </ul>
+          <div class="tags"><span class="tag">特效绑定</span><span class="tag">动作密度</span><span class="tag">神话动作</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="about">
+      <div class="sec-head">
+        <h2>方法</h2>
+        <p>一条片在工作台上经过五个可追踪节点。</p>
+      </div>
+      <div class="about">
+        <div class="panel">
+          <h3>我做什么</h3>
+          <p style="color:var(--muted);margin:0;font-size:15px;">不把生成结果直接当成品。分镜先写清动作、视线和空间，生成后再用抽帧把穿模、漂移、轴线问题送回提示词或时间线。</p>
+          <div class="steps">
+            <div><strong>01 定义</strong><span>剧本和画面目标</span></div>
+            <div><strong>02 设计</strong><span>分镜、机位、锚点</span></div>
+            <div><strong>03 生成</strong><span>图生视频 / 参数</span></div>
+            <div><strong>04 复核</strong><span>抽帧、bad case</span></div>
+            <div><strong>05 交付</strong><span>精剪、声音、导出</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>常用工具</h3>
+          <p style="color:var(--muted);margin:0 0 12px;font-size:15px;">剪映专业版、FFmpeg、RunningHub / H3、Python、JSONL 评测记录。</p>
+          <p style="color:var(--muted);margin:0;font-size:15px;">浙江科技大学 · 机器人工程 · 2026 本科毕业。大学英语四级。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2>看片，或者约面试。</h2>
+          <p>19817554708 · 983481254@qq.com · 杭州</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn" href="mailto:983481254@qq.com">发邮件</a>
+          <a class="btn ghost" href="resume-lin-jiaqin.docx">下载简历</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>林甲勤 / AIGC Video Designer</span>
+      <span>作品集公开页 · 点画面即可播放</span>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll("video").forEach(function (v) {
+      v.addEventListener("play", function () {
+        document.querySelectorAll("video").forEach(function (other) {
+          if (other !== v) other.pause();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
